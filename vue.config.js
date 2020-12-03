@@ -8,7 +8,7 @@ const mockServerPort = 9528;
 module.exports = {
   publicPath: "/", // 基本路径
   outputDir: "dist", // 输出文件目录
-  lintOnSave: process.env.NODE_ENV === "development", // eslint-loader 是否在保存的时候检查
+  lintOnSave: false,
   chainWebpack: config => {
     // Provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
@@ -65,9 +65,7 @@ module.exports = {
     compress: true,
     host: "localhost",
     port: devServerPort,
-    hot: true,
-    proxy:
-      "https://vue-typescript-admin-mock-server.armour.now.sh/mock-api/v1/",
+    proxy: "https://vue-typescript-admin-mock-server.armour.now.sh/mock-api/v1/",
     // proxy: {
     //   // 设置代理
     //   // proxy all requests starting with /api to jsonplaceholder
